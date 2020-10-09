@@ -1,0 +1,261 @@
+
+
+
+
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.Scanner;
+
+public class Spotify {
+
+   static String userNameFile, passwordFile;
+
+   public static void main(String[] args) {
+
+       Scanner scan = new Scanner(System.in);
+       String userNameEntered;
+       int lineNo = 0, noOfTry = 3;
+
+       try {
+           File file = new File("spotifydatabase.txt");
+           FileReader fr = new FileReader(file);
+           BufferedReader br = new BufferedReader(fr);
+           String line;
+           while ((line = br.readLine()) != null) {
+               if (lineNo >= 0) {
+                   userNameFile = line;
+               } 
+               lineNo++;
+           }
+           fr.close(); 
+       } catch (IOException e) {
+           e.printStackTrace();
+       }
+       for (int i = 0; i < 3; i++) {
+           if (i == 0) {
+               System.out.println("Welcome to Spotify!");
+               System.out.println("Please enter a username and password to log in");
+           } else {
+               System.out.println("Sorry, you entered an invalid username or password. Try again.");
+           }
+           System.out.print("Username:");
+           userNameEntered = scan.nextLine();
+
+           if (userNameEntered.equals(userNameFile)) {
+               System.out.println("Welcome!" + userNameEntered);
+               
+			System.out.println("1 - View plan");
+			System.out.println("2 - Change plan");
+			int Choice = scan.nextInt();
+			switch (Choice) {
+				case 1:
+					if (userNameEntered.equals("Sdaniel")) {
+				System.out.println(userNameEntered + "You have the student plan you can Hulu, SHOWTIME, ad-free music offline, and on-demand playback");
+				System.out.println("Your premium for Student receipt");
+			   System.out.println("Your monthy bill is: $5.40");
+			   System.out.println("Your yearly bill is: $64.82");
+			   System.out.println("How much would you like to spend this much?");
+			   Scanner in = new Scanner (System.in);
+			    double userAmount = in.nextDouble();
+			   if(userAmount < 5.40){
+				   System.out.println("$" + userAmount);
+				   System.out.println("We will have to put your account on hold....");
+			   }else {
+				   System.out.println("$" + userAmount);
+				   System.out.println("Enjoy!");
+			   }
+			 }
+			 if (userNameEntered.equals("Fcynthia")) {
+               System.out.println(userNameEntered + ", you currently have access to the Family plan. You have access to 6 premium accounts, a playlist for your family, ad-free music, listen offline, on-demand playback, and the control to block explicit music!");
+			   System.out.println("Your premium for Family receipt");
+			   System.out.println("Your monthy bill is: $16.23");
+			   System.out.println("Your yearly bill is: $194.72");
+			   System.out.println("How much would you like to spend this much?");
+			   Scanner in = new Scanner (System.in);
+			    double userAmount = in.nextDouble();
+			   if(userAmount < 16.23){
+				   System.out.println("$" + userAmount);
+				   System.out.println("We will have to put your account on hold....");
+			   }else {
+				   System.out.println("$" + userAmount);
+				   System.out.println("Enjoy!");
+			   }
+			 }
+			 if (userNameEntered.equals("Ipaola")) {
+               System.out.println(userNameEntered + "You have the indivisual plan you can  Listen to music ad-free, Play anywhere – even offline, On-demand playback");
+			   System.out.println("Your premium for Indivisual receipt");
+			   System.out.println("Your monthy bill is: $10.81");
+			   System.out.println("Your yearly bill is: $129.77");
+			   System.out.println("How much would you like to spend this much?");
+			   Scanner in = new Scanner (System.in);
+			   double userAmount = in.nextDouble();
+			   if(userAmount < 10.81){
+				   System.out.println("$" + userAmount);
+				   System.out.println("We will have to put your account on hold....");
+			   }else {
+				   System.out.println("$" + userAmount);
+				   System.out.println("Enjoy!");
+			   }
+			 }
+			if (userNameEntered.equals("Iali")) {
+				 System.out.println(userNameEntered + "You have the indivisual plan you can  Listen to music ad-free, Play anywhere – even offline, On-demand playback");
+			   System.out.println("Your premium for Indivisual receipt");
+			   System.out.println("Your monthy bill is: $10.81");
+			   System.out.println("Your yearly bill is: $129.77");
+			   Scanner in = new Scanner (System.in);
+			   double userAmount = in.nextDouble();
+			   if(userAmount < 10.81){
+				   System.out.println("$" + userAmount);
+				   System.out.println("We will have to put your account on hold....");
+			   }else {
+				   System.out.println("$" + userAmount);
+				   System.out.println("Enjoy!");
+			   }
+			 }
+            break;
+        case 2:
+				if (userNameEntered.equals("Sdaniel")) {
+				System.out.println(userNameEntered + "You have asked to change your plan ");
+				
+			   Scanner in = new Scanner ( System.in );
+			   System.out.println("1 - Indivisual $9.99");
+			System.out.println("2 - Family $14.99");
+			System.out.println("3 - Student $4.99");
+    switch ( in.nextInt() ) {
+      case 1:
+        System.out.println ( userNameEntered +", Welcome to the indivisual plan! you can  Listen to music ad-free, Play anywhere – even offline, On-demand playback! Here is your receipt - Total billed: $10.81" );
+        break;
+      case 2:
+        System.out.println ( userNameEntered +", Welcome to the Family plan! You have access to 6 premium accounts, a playlist for your family, ad-free music, listen offline, on-demand playback, and the control to block explicit music! Here is your receipt - Total billed: $16.23" );
+        break;
+      case 3:
+		System.out.println("You already have this plan");
+        break;
+			 }
+				}
+			 if (userNameEntered.equals("Fcynthia")) {
+System.out.println(userNameEntered + "You have asked to change your plan ");
+				
+			   Scanner in = new Scanner (System.in);
+			   System.out.println("1 - Indivisual $9.99");
+			System.out.println("2 - Family $14.99");
+			System.out.println("3 - Student $4.99");
+    switch ( in.nextInt() ) {
+      case 1:
+        System.out.println ( userNameEntered +", Welcome to the indivisual plan! you can  Listen to music ad-free, Play anywhere – even offline, On-demand playback! Here is your receipt - Total billed: $10.81" );
+        break;
+      case 2:
+		System.out.println ("You already have this plan" );	       
+		break;
+      case 3:
+        Scanner sc = new Scanner(System.in);
+        System.out.println("It seems you have chosen the Student Payment Plan. Please enter your student e-mail address so we can verify you:");
+		String userEmail = sc.nextLine();
+		if(userEmail.contains("edu")){
+		System.out.println (userNameEntered + " welcome to Premium Student! You now have access to: Hulu, SHOWTIME, ad-free music offline, and on-demand playback! Here is your receipt - Total billed: $5.40" );
+       }else{
+           System.out.println("Sorry this email is invalid. Would you like to try again? 1 for yes. 2 for no");
+         switch ( in.nextInt() ) {
+		 case 1: 
+        System.out.println("It seems you have chosen the Student Payment Plan. Please enter your student e-mail address so we can verify you:");
+		userEmail = sc.nextLine();
+		if(userEmail.contains("edu")){
+		System.out.println (userNameEntered + " welcome to Premium Student! You now have access to: Hulu, SHOWTIME, ad-free music offline, and on-demand playback! Here is your receipt - Total billed: $5.40" );
+       }else{
+           System.out.println("Sorry this email is invalid. goodbye");
+	   }
+		 }
+		}
+        break;
+			 }
+			 }
+			 if (userNameEntered.equals("Ipaola")) {
+				System.out.println(userNameEntered + "You have asked to change your plan");			 
+			  System.out.println(userNameEntered + "You have asked to change your plan ");
+				
+			   Scanner in = new Scanner ( System.in );
+			   System.out.println("1 - Indivisual $9.99");
+			System.out.println("2 - Family $14.99");
+			System.out.println("3 - Student $4.99");
+    switch ( in.nextInt() ) {
+      case 1:
+        System.out.println ("You already have this plan" );
+        break;
+      case 2:
+        System.out.println ( userNameEntered +", Welcome to the Family plan! You have access to 6 premium accounts, a playlist for your family, ad-free music, listen offline, on-demand playback, and the control to block explicit music! Here is your receipt - Total billed: $16.23" );
+        break;
+       case 3:
+	  Scanner sc = new Scanner(System.in);
+        System.out.println("It seems you have chosen the Student Payment Plan. Please enter your student e-mail address so we can verify you:");
+		String userEmail = sc.nextLine();
+		if(userEmail.contains("edu")){
+		System.out.println (userNameEntered + " welcome to Premium Student! You now have access to: Hulu, SHOWTIME, ad-free music offline, and on-demand playback! Here is your receipt - Total billed: $5.40" );
+       }else{
+           System.out.println("Sorry this email is invalid. Would you like to try again? 1 for yes. 2 for no");
+         switch ( in.nextInt() ) {
+		 case 1: 
+        System.out.println("It seems you have chosen the Student Payment Plan. Please enter your student e-mail address so we can verify you:");
+		userEmail = sc.nextLine();
+		if(userEmail.contains("edu")){
+		System.out.println (userNameEntered + " welcome to Premium Student! You now have access to: Hulu, SHOWTIME, ad-free music offline, and on-demand playback! Here is your receipt - Total billed: $5.40" );
+       }else{
+           System.out.println("Sorry this email is invalid. goodbye");
+	   }
+		 }
+		}      break;
+			 }
+			 }
+			if (userNameEntered.equals("Iali")) {
+				System.out.println(userNameEntered + "You have asked to change your plan");			  
+			   System.out.println(userNameEntered + "You have asked to change your plan ");
+				
+			   Scanner in = new Scanner ( System.in );
+			   System.out.println("1 - Indivisual $9.99");
+			System.out.println("2 - Family $14.99");
+			System.out.println("3 - Student $4.99");
+    switch ( in.nextInt() ) {
+      case 1:
+        System.out.println ("You already have this plan" );
+        break;
+      case 2:
+        System.out.println ( userNameEntered +", Welcome to the Family plan! You have access to 6 premium accounts, a playlist for your family, ad-free music, listen offline, on-demand playback, and the control to block explicit music! Here is your receipt - Total billed: $16.23" );
+        break;
+      case 3:
+	  Scanner sc = new Scanner(System.in);
+        System.out.println("It seems you have chosen the Student Payment Plan. Please enter your student e-mail address so we can verify you:");
+		String userEmail = sc.nextLine();
+		if(userEmail.contains("edu")){
+		System.out.println (userNameEntered + " welcome to Premium Student! You now have access to: Hulu, SHOWTIME, ad-free music offline, and on-demand playback! Here is your receipt - Total billed: $5.40" );
+       }else{
+           System.out.println("Sorry this email is invalid. Would you like to try again? 1 for yes. 2 for no");
+         switch ( in.nextInt() ) { 
+		 case 1: 
+        System.out.println("It seems you have chosen the Student Payment Plan. Please enter your student e-mail address so we can verify you:");
+        userEmail = sc.nextLine();
+		if(userEmail.contains("edu")){
+		System.out.println (userNameEntered + " welcome to Premium Student! You now have access to: Hulu, SHOWTIME, ad-free music offline, and on-demand playback! Here is your receipt - Total billed: $5.40" );
+       }else{
+           System.out.println("Sorry this email is invalid. goodbye");
+	   }
+		 }
+		break;
+		}
+	}
+			}
+			}
+			
+            break;
+           } else {
+               noOfTry--;
+               if (noOfTry == 0) {
+                   System.exit(0);
+               }
+       scan.close();
+   }
+	   
+   }
+}
+}
